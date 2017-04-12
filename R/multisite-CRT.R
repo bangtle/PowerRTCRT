@@ -71,7 +71,7 @@ powerMSCRT <- function(n,J,K,delta,sigmad,rhoL2,rhoL3,numcovL1=0,numcovL2=0,R2L1
   else if ((numcovL1==0)&(numcovL2=0)&(randeff==FALSE)){ # model (6.2.1)
     num.df <- 1
     denom.df <- K-1
-    lambda <- K*J*delta^2/(4*(rhoL2+(1-rhoL3-rhoL2)/n)/J)
+    lambda <- K*delta^2/(4*(rhoL2+(1-rhoL3-rhoL2)/n)/J)
   }
   else if (!(numcovL1==0)&(numcovL2=0)&(randeff==FALSE)){ # model (6.2.2)
     num.df <- 1
@@ -81,12 +81,12 @@ powerMSCRT <- function(n,J,K,delta,sigmad,rhoL2,rhoL3,numcovL1=0,numcovL2=0,R2L1
   else if ((numcovL1==0)&!(numcovL2=0)&(randeff==FALSE)){ # model (6.2.3)
     num.df <- 1
     denom.df <- K-1-numcovL2
-    lambda <- K*J*delta^2/(4*((1-R2L2)*rhoL2+(1-rhoL3-rhoL2)/n)/J)
+    lambda <- K*delta^2/(4*((1-R2L2)*rhoL2+(1-rhoL3-rhoL2)/n)/J)
   }
   else if (!(numcovL1==0)&!(numcovL2=0)&(randeff==FALSE)){ # model (6.2.4)
     num.df <- 1
     denom.df <- K-1-numcovL2
-    lambda <- K*J*delta^2/(4*((1-R2L2)*rhoL2+(1-R2L1)*(1-rhoL3-rhoL2)/n)/J)
+    lambda <- K*delta^2/(4*((1-R2L2)*rhoL2+(1-R2L1)*(1-rhoL3-rhoL2)/n)/J)
       }
   else stop("Unrecognized model. Please specify a valid model!")
 
